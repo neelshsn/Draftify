@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Draftify",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "app.draftify.desktop",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://127.0.0.1:5175",
@@ -35,3 +35,4 @@
     ]
   }
 }
+

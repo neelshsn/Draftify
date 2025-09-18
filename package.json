@@ -6,24 +6,32 @@
   "scripts": {
     "dev": "pnpm --filter desktop exec tauri dev",
     "build": "pnpm --filter desktop exec tauri build",
-    "lint": "pnpm --filter desktop run lint",
-    "format": "pnpm exec prettier --write .",
-    "format:check": "pnpm exec prettier --check .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "pnpm --filter desktop run test:e2e",
     "test:e2e": "pnpm --filter desktop run test:e2e",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": [
-      "pnpm --filter desktop exec eslint --fix",
-      "pnpm exec prettier --write"
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
     ],
-    "**/*.{json,md,css,scss,html}": "pnpm exec prettier --write"
+    "*.{css,md}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-unused-imports": "^4.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "prettier": "^3.6.2"
