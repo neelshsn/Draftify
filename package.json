@@ -1,0 +1,31 @@
+{
+  "name": "draftify",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.17.0",
+  "scripts": {
+    "dev": "pnpm --filter desktop exec tauri dev",
+    "build": "pnpm --filter desktop exec tauri build",
+    "lint": "pnpm --filter desktop run lint",
+    "format": "pnpm exec prettier --write .",
+    "format:check": "pnpm exec prettier --check .",
+    "test": "pnpm --filter desktop run test:e2e",
+    "test:e2e": "pnpm --filter desktop run test:e2e",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "pnpm --filter desktop exec eslint --fix",
+      "pnpm exec prettier --write"
+    ],
+    "**/*.{json,md,css,scss,html}": "pnpm exec prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2"
+  }
+}

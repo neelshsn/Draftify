@@ -1,0 +1,7 @@
+node_modules
+apps/desktop/dist
+apps/desktop/node_modules
+apps/desktop/src-tauri/target
+playwright-report
+coverage
+dist

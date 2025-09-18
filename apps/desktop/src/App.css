@@ -1,0 +1,25 @@
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tagline {
+  margin: 0;
+  color: #5a6270;
+  font-size: 1.05rem;
+}
